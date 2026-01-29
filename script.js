@@ -2,7 +2,7 @@
 // Settings
 // =========
 // ここをあなたのYouTube動画リンクに置き換えてください。
-const YOUTUBE_URL = "";
+const YOUTUBE_URL = "https://youtu.be/n80Vc4-oeD0";
 
 // =========
 // Helpers
