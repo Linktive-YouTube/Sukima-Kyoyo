@@ -1,4 +1,4 @@
-const YOUTUBE_URL = "https://youtu.be/n80Vc4-oeD0";
+const YOUTUBE_URL = "https://youtu.be/SMx6Et878So";
 
 function setupMagnets(){
   const magnets = [...document.querySelectorAll(".magnet")];
