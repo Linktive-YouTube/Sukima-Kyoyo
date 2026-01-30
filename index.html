@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PodFolio - Design Dimensions</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Mono:wght@400;700&family=Outfit:wght@300;700;900&family=Permanent+Marker&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        mono: ['Space Mono', 'monospace'],
+                        display: ['Outfit', 'sans-serif'],
+                        marker: ['Permanent Marker', 'cursive'],
+                    },
+                    width: {
+                        '128': '32rem',
+                    },
+                    colors: {
+                        'brand-green-light': '#8dfba3',
+                        'brand-blue-light': '#16caf7',
+                        'brand-teal-light': '#69ebc0',
+                        'brand-teal-dark': '#0cc0df',
+                        'brand-dark': '#01142b',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'marquee': 'marquee 25s linear infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+</head>
+
+<body class="overflow-x-hidden min-h-screen transition-colors duration-700 font-bold italic bg-white" id="body-root">
+
+    <!-- Decor Elements -->
+    <div id="decor-noise" class="absolute inset-0 opacity-[0.03] pointer-events-none z-0 mix-blend-overlay hidden">
+    </div>
+    <div id="decor-blob-1"
+        class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-green-light/30 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2 z-0">
+    </div>
+    <div id="decor-blob-2"
+        class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-blue-light/30 rounded-full blur-3xl pointer-events-none translate-y-1/2 -translate-x-1/2 z-0">
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar"
+        class="fixed top-0 w-full z-40 p-6 flex justify-between items-center transition-colors duration-300">
+        <div class="flex items-center gap-2">
+            <div id="logo-box"
+                class="w-8 h-8 flex items-center justify-center transition-all duration-700 bg-brand-dark rounded">
+                <i data-lucide="radio" class="text-white w-4 h-4"></i>
+            </div>
+            <span id="logo-text" class="font-bold text-xl transition-all duration-700 text-brand-dark">スキマ時間に教養Up</span>
+        </div>
+
+        <div class="hidden md:flex gap-8 font-medium opacity-80">
+            <a href="#" class="hover:opacity-100 transition-opacity">Podcast</a>
+            <a href="#" class="hover:opacity-100 transition-opacity">AboutUs</a>
+        </div>
+
+        <button class="md:hidden" id="mobile-menu-btn">
+            <i data-lucide="menu"></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero-section"
+        class="relative pt-32 pb-20 px-6 md:px-12 min-h-screen flex items-center z-10 transition-all duration-700">
+
+        <!-- Hero Content -->
+        <div id="hero-content-wrapper" class="flex flex-col gap-6 max-w-4xl transition-all duration-700">
+            <div class="reveal-anim" data-anim-type="fade" data-delay="100">
+                <span id="hero-tagline"
+                    class="inline-block px-4 py-2 mb-4 bg-brand-dark text-white transform -skew-x-12 uppercase tracking-widest text-sm font-black transition-all duration-700">
+                    <span class="block transform skew-x-12">((●)) ポッドキャスト形式</span>
+                </span>
+            </div>
+
+            <div class="reveal-anim" data-anim-type="fade" data-delay="300">
+                <h1 id="hero-headline"
+                    class="flex flex-col items-start gap-2 leading-none font-black tracking-tighter transition-all duration-700 text-5xl md:text-7xl">
+                    <span class="bg-brand-dark text-white px-6 py-2 transform -skew-x-12"><span
+                            class="block transform skew-x-12">スキマ時間で</span></span>
+                    <span class="bg-brand-dark text-white px-6 py-2 transform -skew-x-12"><span
+                            class="block transform skew-x-12">今日から使える教養を学ぼう</span></span>
+                </h1>
+            </div>
+
+            <div class="reveal-anim" data-anim-type="fade" data-delay="500">
+                <div class="mt-6 bg-white/80 backdrop-blur-sm p-4 inline-block transform -skew-x-12">
+                    <p id="hero-desc" class="text-lg md:text-xl text-brand-dark transform skew-x-12 max-w-lg font-bold">
+                        社会人必見！
+                    </p>
+                </div>
+            </div>
+
+            <div class="reveal-anim" data-anim-type="fade" data-delay="700">
+                <div class="flex gap-4 mt-4 flex-wrap">
+                    <!-- CTA Button (Ripple) -->
+                    <button id="hero-cta-btn"
+                        class="ripple-btn relative overflow-hidden isolate px-8 py-4 font-bold flex items-center gap-2 transition-all duration-700 bg-brand-teal-dark text-white hover:bg-brand-dark hover:scale-105 rounded-full shadow-lg border-2 border-transparent">
+                        <span class="ripple-fill absolute rounded-full pointer-events-none -z-10 bg-white/20"></span>
+                        <span class="btn-text relative z-10 flex items-center gap-2 transition-colors duration-300">
+                            <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+                            <a href="https://www.youtube.com/@KyoyoUp">YouTubeで視聴</a>
+                        </span>
+                    </button>
+
+                    <!-- Preview Button (Ripple) -->
+                    <button id="hero-preview-btn"
+                        class="ripple-btn relative overflow-hidden isolate px-8 py-4 border-2 border-brand-dark font-bold transition-all duration-700 text-brand-dark hover:bg-brand-dark hover:text-white rounded-full">
+                        <span class="ripple-fill absolute rounded-full pointer-events-none -z-10 bg-white/20"></span>
+                        <span class="btn-text relative z-10 transition-colors duration-300">
+                            YouTubeMusicで聴く
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Visual -->
+        <div id="hero-visual-wrapper" class="relative mt-12 md:mt-0 transition-all duration-700">
+            <div class="reveal-anim w-full h-full" data-anim-type="pop" data-delay="600">
+                <div id="hero-image-container"
+                    class="relative overflow-hidden aspect-square md:aspect-[4/3] transition-all duration-700">
+                    <img id="hero-image" src="https://picsum.photos/seed/neon-noir/800/800" alt="Podcast Art"
+                        class="object-cover w-full h-full hover:scale-105 transition-transform duration-[2s]" />
+
+                    <!-- Floating Decor -->
+                    <div id="hero-floating-icon"
+                        class="absolute -bottom-6 -left-6 w-32 h-32 flex items-center justify-center animate-float z-20 transition-all duration-700 hidden">
+                        <i data-lucide="headphones" class="w-12 h-12 text-white"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Marquee -->
+    <div id="marquee-section"
+        class="py-6 overflow-hidden border-y-4 border-white bg-brand-teal-dark transition-all duration-700 block -rotate-1 shadow-xl">
+        <div class="whitespace-nowrap animate-marquee">
+            <span class="marquee-text text-4xl font-bold uppercase mx-8 text-white">New Episodes Daily • Trending Now •
+                Listen Free • </span>
+            <span class="marquee-text text-4xl font-bold uppercase mx-8 text-white">New Episodes Daily • Trending Now •
+                Listen Free • </span>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section id="features-section" class="py-32 px-6 md:px-12 transition-all duration-700">
+        <div class="max-w-7xl mx-auto">
+            <div class="reveal-anim">
+                <h2 id="features-title"
+                    class="text-4xl md:text-5xl font-black mb-16 text-center transition-all duration-700">
+                    <span class="inline-block bg-brand-dark text-white px-6 py-2 transform -skew-x-12"><span
+                            class="block transform skew-x-12">Why Listen?</span></span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8" id="features-grid">
+                <!-- Feature 1 -->
+                <div class="reveal-anim" data-anim-type="slide" data-delay="0">
+                    <div id="feat-card-1"
+                        class="feature-card p-8 h-full transition-all duration-500 group hover:-translate-y-2">
+                        <div id="feat-icon-box-1"
+                            class="w-12 h-12 mb-6 flex items-center justify-center transition-all duration-700 bg-brand-blue-light/20 rounded-full text-brand-dark">
+                            <i data-lucide="mic-2" id="feat-icon-1" class="transition-colors"></i>
+                        </div>
+                        <h3 id="feat-title-1" class="text-2xl font-bold mb-4 transition-colors text-brand-dark">Crystal
+                            Audio</h3>
+                        <p class="opacity-70 leading-relaxed">Lossless compression for the ultimate fidelity.</p>
+                    </div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="reveal-anim" data-anim-type="slide" data-delay="200">
+                    <div id="feat-card-2"
+                        class="feature-card p-8 h-full transition-all duration-500 group hover:-translate-y-2">
+                        <div id="feat-icon-box-2"
+                            class="w-12 h-12 mb-6 flex items-center justify-center transition-all duration-700 bg-brand-green-light/20 rounded-full text-brand-dark">
+                            <i data-lucide="share-2" id="feat-icon-2" class="transition-colors"></i>
+                        </div>
+                        <h3 id="feat-title-2" class="text-2xl font-bold mb-4 transition-colors text-brand-dark">Global
+                            Creators</h3>
+                        <p class="opacity-70 leading-relaxed">Access thousands of exclusive channels.</p>
+                    </div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="reveal-anim" data-anim-type="slide" data-delay="400">
+                    <div id="feat-card-3"
+                        class="feature-card p-8 h-full transition-all duration-500 group hover:-translate-y-2">
+                        <div id="feat-icon-box-3"
+                            class="w-12 h-12 mb-6 flex items-center justify-center transition-all duration-700 bg-brand-teal-dark/20 rounded-full text-brand-dark">
+                            <i data-lucide="heart" id="feat-icon-3" class="transition-colors"></i>
+                        </div>
+                        <h3 id="feat-title-3" class="text-2xl font-bold mb-4 transition-colors text-brand-dark">Smart
+                            Offline</h3>
+                        <p class="opacity-70 leading-relaxed">AI-predicted downloads for your commute.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Episode Row -->
+    <section class="py-32 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-center">
+            <div class="md:w-1/2">
+                <div class="reveal-anim" data-anim-type="slide">
+                    <h2 id="episodes-title" class="text-4xl md:text-6xl font-black mb-8 transition-all duration-700">
+                        <span class="inline-block bg-brand-dark text-white px-6 py-2 transform -skew-x-12"><span
+                                class="block transform skew-x-12">Latest Drop</span></span>
+                    </h2>
+                    <div id="episodes-img-box"
+                        class="aspect-video relative overflow-hidden group cursor-pointer transition-all duration-700">
+                        <img id="episodes-img" src="https://picsum.photos/seed/neon-noir2/800/600"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            alt="Episode" />
+                        <div
+                            class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
+                                <i data-lucide="play" class="ml-1 text-black fill-black"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 space-y-8" id="episode-list">
+                <!-- Items populated in HTML for simplicity, logic updates styles -->
+                <!-- Item 1 -->
+                <div class="reveal-anim" data-anim-type="fade" data-delay="100">
+                    <div
+                        class="episode-item flex gap-6 items-center p-4 hover:bg-black/5 transition-colors cursor-pointer group rounded-lg">
+                        <span class="ep-num text-4xl font-bold opacity-20 transition-all duration-700">01</span>
+                        <div>
+                            <h4 class="text-xl font-bold group-hover:underline">The Future of Sound 1</h4>
+                            <p class="opacity-60 text-sm">34 min • Tech & Culture</p>
+                        </div>
+                        <button
+                            class="ep-play-btn ml-auto w-10 h-10 border rounded-full flex items-center justify-center transition-all">
+                            <i data-lucide="play" class="w-3 h-3 fill-current"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="reveal-anim" data-anim-type="fade" data-delay="200">
+                    <div
+                        class="episode-item flex gap-6 items-center p-4 hover:bg-black/5 transition-colors cursor-pointer group rounded-lg">
+                        <span class="ep-num text-4xl font-bold opacity-20 transition-all duration-700">02</span>
+                        <div>
+                            <h4 class="text-xl font-bold group-hover:underline">The Future of Sound 2</h4>
+                            <p class="opacity-60 text-sm">34 min • Tech & Culture</p>
+                        </div>
+                        <button
+                            class="ep-play-btn ml-auto w-10 h-10 border rounded-full flex items-center justify-center transition-all">
+                            <i data-lucide="play" class="w-3 h-3 fill-current"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="reveal-anim" data-anim-type="fade" data-delay="300">
+                    <div
+                        class="episode-item flex gap-6 items-center p-4 hover:bg-black/5 transition-colors cursor-pointer group rounded-lg">
+                        <span class="ep-num text-4xl font-bold opacity-20 transition-all duration-700">03</span>
+                        <div>
+                            <h4 class="text-xl font-bold group-hover:underline">The Future of Sound 3</h4>
+                            <p class="opacity-60 text-sm">34 min • Tech & Culture</p>
+                        </div>
+                        <button
+                            class="ep-play-btn ml-auto w-10 h-10 border rounded-full flex items-center justify-center transition-all">
+                            <i data-lucide="play" class="w-3 h-3 fill-current"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer"
+        class="text-white py-20 px-6 md:px-12 mt-20 text-center relative overflow-hidden transition-all duration-700 bg-brand-dark">
+        <div id="footer-decor" class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none hidden">
+            <div class="absolute top-10 left-10 w-40 h-40 rounded-full border-4 border-white"></div>
+            <div class="absolute bottom-10 right-10 w-60 h-60 border-4 border-white rotate-45"></div>
+        </div>
+        <div class="relative z-10 max-w-2xl mx-auto">
+            <h2 id="footer-title" class="text-4xl md:text-6xl font-bold mb-8 transition-all duration-700">Join the
+                frequency.</h2>
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <input type="email" placeholder="Enter your email" id="footer-input"
+                    class="px-6 py-4 bg-white/10 backdrop-blur border border-white/30 placeholder-white/60 text-white outline-none focus:bg-white/20 transition-all w-full md:w-auto h-14" />
+
+                <!-- Footer Button (Ripple) -->
+                <button id="footer-btn"
+                    class="ripple-btn relative overflow-hidden isolate px-8 py-4 bg-white text-black font-bold h-14 transition-all duration-700">
+                    <span class="ripple-fill bg-black absolute rounded-full pointer-events-none -z-10"></span>
+                    <span class="btn-text relative z-10 transition-colors duration-300 text-black">
+                        Subscribe
+                    </span>
+                </button>
+            </div>
+            <p class="mt-12 opacity-50 text-sm">© 2024 PodFolio. Designed for ears.</p>
+        </div>
+    </footer>
+
+    <!-- Theme Selector Toggle -->
+    <button id="theme-toggle-btn"
+        class="fixed bottom-6 right-6 z-50 p-4 bg-white text-black rounded-full shadow-2xl hover:scale-110 transition-transform">
+        <i data-lucide="palette" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Theme Sidebar -->
+    <div id="theme-sidebar"
+        class="fixed top-0 right-0 h-screen w-80 bg-white/95 backdrop-blur-md border-l border-gray-200 z-50 flex flex-col shadow-2xl transition-transform duration-500 translate-x-full">
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-white">
+            <div>
+                <h2 class="font-bold text-lg text-gray-900">Design Dimensions</h2>
+                <p class="text-xs text-gray-500">Select a reality</p>
+            </div>
+            <button id="theme-close-btn" class="text-gray-400 hover:text-gray-900">
+                <i data-lucide="minimize-2" class="w-4 h-4"></i>
+            </button>
+        </div>
+
+        <div id="theme-list" class="flex-1 overflow-y-auto p-4 space-y-3 no-scrollbar">
+            <!-- Themes injected via JS -->
+        </div>
+
+        <div class="p-4 bg-gray-50 border-t border-gray-100">
+            <div class="flex items-center gap-2 text-xs text-gray-500">
+                <i data-lucide="sparkles" class="w-3 h-3 text-purple-500"></i>
+                <span>Static Mode (No AI)</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
