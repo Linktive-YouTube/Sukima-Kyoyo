@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>経済学入門ガイド Part 1</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <header class="header-section" data-animate>
+    <h1 class="header-title">経済学入門ガイド</h1>
+    <div class="header-subtitle">Part 1: 思考の道具箱を手に入れよう 🧰</div>
+  </header>
+
+  <figure class="thumb" data-animate>
+    <img src="./02_経済学.png" alt="経済学サムネイル" />
+  </figure>
+
+  <section class="podcast-cta" data-animate aria-label="ポッドキャスト本編リンク">
+    <p class="podcast-cta__text">ポッドキャスト本編はこちらのYouTubeの動画をご覧ください</p>
+    <a class="magnet podcast-cta__button" id="youtubeButton"
+       href="https://youtu.be/n80Vc4-oeD0" target="_blank" rel="noopener noreferrer">
+      <span class="magnet__label">YouTubeで本編を見る</span>
+      <span class="magnet__count">▶︎</span>
+    </a>
+  </section>
+
+  <div class="section-intro" data-animate>
+    <strong>結論：</strong><br>
+    経済学は「お金の学問」じゃなくて、「限られた資源を、どう配分すると人間社会がどう動くか」を観察し、説明し、予測し、（場合によっては）改善案まで出すための
+    <strong>“思考の道具箱”</strong> です。
+  </div>
+
+  <section class="section" data-animate>
+    <h2 class="section-title">🔍 経済学とは何か</h2>
+    <p>経済学の中心は以下の4ステップで説明できるシンプルさを持っています。</p>
+    <ul class="definition-list">
+      <li>💖 <strong>人は欲しい（効用）</strong></li>
+      <li>💎 <strong>でも資源は限られてる（希少性）</strong></li>
+      <li>⚖️ <strong>だから選ばなきゃいけない（トレードオフ）</strong></li>
+      <li>🔄 <strong>すると行動が生まれ、社会現象になる（市場・制度・組織）</strong></li>
+    </ul>
+    <div class="metaphor-box">
+      <p style="margin: 0">
+        <strong>🗺️ モデルという考え方</strong><br>
+        経済学は「正しい答えを暗記する学問」ではなく、現実の複雑さを「モデル（簡略化した地図）」で切り分けて考える学問です。地図は現実そのものではありませんが、道に迷わないために役立ちます。
+      </p>
+    </div>
+  </section>
+
+  <section class="section" data-animate>
+    <h2 class="section-title">🌏 経済学の主要マップ</h2>
+
+    <div class="grid-3" style="margin-bottom: 40px">
+      <div class="category-box">
+        <div>🏠 ミクロ経済学</div>
+        <small>個人・企業の意思決定と市場</small>
+      </div>
+      <div class="category-box">
+        <div>📈 マクロ経済学</div>
+        <small>国全体の景気・物価・成長</small>
+      </div>
+      <div class="category-box">
+        <div>📐 計量経済学</div>
+        <small>データ分析の技術（測定器）</small>
+      </div>
+    </div>
+
+    <h3>日常に関わる10分野</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>🏭 産業組織論 (IO)</h4>
+        <p>企業の競争、独占、価格戦略、プラットフォーム。</p>
+        <div class="card-example">例：サブスク値上げはどの条件で起きやすい？</div>
+      </div>
+      <div class="card">
+        <h4>👷 労働経済学</h4>
+        <p>賃金、雇用、スキル、格差、働き方。</p>
+        <div class="card-example">例：最低賃金は雇用を減らす？増やす？</div>
+      </div>
+      <div class="card">
+        <h4>🏛️ 公共経済学</h4>
+        <p>税、社会保障、公共財、政策評価。</p>
+        <div class="card-example">例：“公平”ってどう定義する？</div>
+      </div>
+      <div class="card">
+        <h4>💰 金融経済学</h4>
+        <p>資産価格、リスク、金利、投資家行動。</p>
+        <div class="card-example">例：リスクとは“怖さ”ではなく“分散”のこと。</div>
+      </div>
+      <div class="card">
+        <h4>🚢 国際経済学</h4>
+        <p>貿易、為替、グローバルサプライチェーン。</p>
+        <div class="card-example">例：円安は誰が得して誰が損する？</div>
+      </div>
+      <div class="card">
+        <h4>♟️ ゲーム理論</h4>
+        <p>相手がいる意思決定。交渉、協力、競争。</p>
+        <div class="card-example">例：値下げ競争はなぜ泥沼化する？</div>
+      </div>
+      <div class="card">
+        <h4>🧠 行動経済学</h4>
+        <p>人が合理的じゃないことを前提にした意思決定。</p>
+        <div class="card-example">例：セールで余計に買う、先延ばし癖。</div>
+      </div>
+      <div class="card">
+        <h4>🌱 開発経済学</h4>
+        <p>貧困、教育、制度、援助の効果測定。</p>
+        <div class="card-example">例：介入の評価（RCT）など“測る”技術。</div>
+      </div>
+      <div class="card">
+        <h4>🌲 環境経済学</h4>
+        <p>外部性、炭素税、資源管理。</p>
+        <div class="card-example">例：排出権取引は“免罪符”か“道具”か。</div>
+      </div>
+      <div class="card">
+        <h4>🏙️ 都市・地域経済学</h4>
+        <p>地価、通勤、集積の利益。</p>
+        <div class="card-example">例：家賃が高い街はなぜ強い？</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-animate>
+    <h2 class="section-title">⚔️ 学びの武器（共通技術）</h2>
+    <p>分野が違っても、使う思考ツールは共通しています。</p>
+    <ul>
+      <li><strong>インセンティブ</strong>：人が動く理由</li>
+      <li><strong>トレードオフ</strong>：何かを取れば何かを失う</li>
+      <li><strong>均衡</strong>：みんなが動いた結果どこに落ち着くか</li>
+      <li><strong>限界（マージナル）</strong>：あと1単位増やしたらどう変わるか</li>
+      <li><strong>情報</strong>：情報の非対称性、シグナル</li>
+      <li><strong>外部性</strong>：当事者以外への影響</li>
+      <li><strong>因果推論</strong>：それは本当に原因なのか？</li>
+    </ul>
+    <div class="card-example" style="margin-top: 20px">
+      💡 <strong>応用例：</strong>「値上げ＝悪」と決めつけず、「なぜ値上げが可能になったのか（競争・供給制約・差別化・規制・心理）」まで分解して見る視点が身につきます。
+    </div>
+  </section>
+
+  <section class="section" data-animate>
+    <h2 class="section-title">🏆 実生活での役立ち度ランキング</h2>
+    <p>一般人が学ぶなら、GPTはこの順序を推します。</p>
+
+    <div class="ranking-item">
+      <div class="rank-badge">1</div>
+      <div>
+        <strong>ミクロ経済学（基礎）</strong><br>
+        <small>日常の選択、価格、交渉、ビジネス構造まで全部に刺さる万能選手。</small>
+      </div>
+    </div>
+    <div class="ranking-item">
+      <div class="rank-badge">2</div>
+      <div>
+        <strong>行動経済学</strong><br>
+        <small>自分や社会の“バグ（非合理性）”を理解できる。ポイント還元の罠などに強くなる。</small>
+      </div>
+    </div>
+    <div class="ranking-item">
+      <div class="rank-badge">3</div>
+      <div>
+        <strong>マクロ経済学</strong><br>
+        <small>ニュース耐性がつく。景気・物価・金利の判断が雑にならず、陰謀論を回避できる。</small>
+      </div>
+    </div>
+    <div class="ranking-item">
+      <div class="rank-badge">4</div>
+      <div>
+        <strong>統計・計量の初歩</strong><br>
+        <small>「それっぽい相関」に騙されず、因果関係を疑う力がつく。</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-animate>
+    <h2 class="section-title">⚖️ メリットとリスク</h2>
+    <div class="grid-2">
+      <div class="comparison-col">
+        <h3 class="merit-header">学ぶメリット</h3>
+        <div class="comparison-content">
+          <ul class="check-list">
+            <li>意思決定が“気分”から“構造”に変わる</li>
+            <li>数字や政策ニュースへの耐性が上がる</li>
+            <li>交渉や契約で損しにくくなる</li>
+            <li>社会問題の議論を言語化できる</li>
+            <li>ビジネスの設計が上手くなる</li>
+          </ul>
+        </div>
+      </div>
+      <div class="comparison-col">
+        <h3 class="risk-header">学ばないリスク</h3>
+        <div class="comparison-content">
+          <ul class="alert-list">
+            <li>「原因っぽい話」に流される</li>
+            <li>短期の印象だけで評価しがちになる</li>
+            <li>ゼロサム思考（誰かの得＝誰かの損）に偏る</li>
+            <li>“無料”の裏側にあるコストを見落とす</li>
+            <li>単純化された極論に絡め取られる</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-animate>
+    <h2 class="section-title">🚗 金融リテラシー vs 経済学</h2>
+    <p>似ていますが、視点の高さが違います。</p>
+    <table class="vs-table">
+      <thead>
+        <tr>
+          <th>金融リテラシー<br><span style="font-size: 0.8em; color: #666">（個人の実務）</span></th>
+          <th>経済学<br><span style="font-size: 0.8em; color: #666">（社会のメカニズム）</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>例：</strong>金利、ローン、保険、分散投資、家計管理</td>
+          <td><strong>例：</strong>なぜインフレが起きるか、独占の弊害、税の影響</td>
+        </tr>
+        <tr>
+          <td colspan="2" style="background: #f8fafc; text-align: center">
+            <strong>🚙 たとえ話</strong><br>
+            金融リテラシーは<strong>「車の運転と整備」</strong>。<br>
+            経済学は<strong>「交通ルールと都市設計と渋滞理論」</strong>。
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section" data-animate>
+    <h2 class="section-title">❤️ 経済学はお金だけじゃない</h2>
+    <p>経済学は「人間学」に近い側面があります。お金は観測しやすい指標にすぎません。</p>
+    <ul>
+      <li>⏳ <strong>時間の配分</strong>（勉強、休息、育児）</li>
+      <li>👀 <strong>注意力の配分</strong>（スマホ、広告）</li>
+      <li>🤝 <strong>信頼の設計</strong>（評判、レビュー）</li>
+      <li>🚫 <strong>ルールの副作用</strong>（罰則の逆効果）</li>
+      <li>😊 <strong>幸福や満足</strong>（効用の最大化）</li>
+    </ul>
+    <p style="margin-top: 15px; color: var(--primary)">
+      <strong>Point:</strong> 「日常の選択の科学」として捉えると、世界の見え方が変わります。
+    </p>
+  </section>
+
+  <section class="section" data-animate style="border-left: 5px solid var(--accent)">
+    <h2 class="section-title" style="border: none; margin-bottom: 15px">🗝️ 番組を強くする必須テーマ</h2>
+    <div class="theme-tags">
+      <span class="theme-tag">モデルは現実のコピーではない</span>
+      <span class="theme-tag">「効率」と「公平」は別軸</span>
+      <span class="theme-tag">政策にはトレードオフがある</span>
+      <span class="theme-tag">データは万能ではないが妄想より強い</span>
+      <span class="theme-tag">意見の対立は前提の違い</span>
+    </div>
+  </section>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
